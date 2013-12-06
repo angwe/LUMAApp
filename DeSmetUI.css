@@ -1,0 +1,36 @@
+
+html { height: 100% }
+body { height: 100%; margin: 0; padding: 0 }
+#map-canvas { height: 75%;
+		width: 100%;
+		position: absolute;
+		top: +25%;
+		left: 0px;
+}
+#controls { height: 25%;
+		width: 80%;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+}
+#layers { height: 25%;
+		width: 20%;
+		background-color: lightgray;
+		padding: 5px;
+		position: absolute;
+		top: 0px;
+		left: 80%;
+		overflow: scroll;
+}
+#AddMarker {
+	cursor: pointer;
+	border: 1px solid gray;
+	color: red;
+	display: inline-block;
+}
+#AddPath {
+	cursor: pointer;
+	border: 1px solid gray;
+	color: green;
+	display: inline-block;
+}
