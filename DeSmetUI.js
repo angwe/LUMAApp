@@ -50,8 +50,8 @@ $(document).ready( function () {
 		var stepNumber = 0;
 		
 		var aniMarkerOpts = {
-			location: stepArray[stepNumber],
-			visible: true,
+			position: stepArray[stepNumber],
+      visible: true,
 			icon: './mapbox-maki/src/airport-24.svg'
 		};
 		
@@ -60,7 +60,7 @@ $(document).ready( function () {
 		(function myLoop (i) {
 			setTimeout(function () {
 				stepNumber++;
-				aniMarker['0'].set('location',stepArray[stepNumber]);
+				aniMarker['0'].set('position',stepArray[stepNumber]);
 				if (--i) myLoop(i);
 			}, 500)
 		})(10);
