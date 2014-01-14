@@ -22,13 +22,13 @@ body { height: 100%; margin: 0; padding: 0 }
 		left: 80%;
 		overflow: scroll;
 }
-#AddMarker {
+#AddMarkers {
 	cursor: pointer;
 	border: 1px solid gray;
 	color: red;
 	display: inline-block;
 }
-#AddPath {
+#ClearAnimations {
 	cursor: pointer;
 	border: 1px solid gray;
 	color: green;
