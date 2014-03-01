@@ -8,19 +8,18 @@ body { height: 100%; margin: 0; padding: 0 }
 		left: 0px;
 }
 #controls { height: 25%;
-		width: 80%;
+		width: 50%;
+		border-right: 1px solid grey;
 		position: absolute;
 		left: 0px;
 		top: 0px;
 }
 #layers { height: 25%;
-		width: 20%;
-		background-color: lightgray;
-		padding: 5px;
+		width: 50%;
+		border-left: 1px solid grey;
 		position: absolute;
 		top: 0px;
-		left: 80%;
-		overflow: scroll;
+		left: 50%;
 }
 #AddMarkers {
 	cursor: pointer;
@@ -32,5 +31,61 @@ body { height: 100%; margin: 0; padding: 0 }
 	cursor: pointer;
 	border: 1px solid gray;
 	color: green;
+	display: inline-block;
+}
+#ClearLetters {
+	cursor: pointer;
+	border: 1px solid gray;
+	color: blue;
+	display: inline-block;
+}
+#letters {
+	cursor: pointer;
+	border: 1px solid black;
+	color: red;
+	font-weight: bolder;
+	display: inline-block;
+}
+#locatable {
+	cursor: pointer;
+	border: 1px solid black;
+	color: goldenrod;
+	font-weight: bolder;
+	display: inline-block;
+}
+#nolocate {	
+	cursor: pointer;
+	border: 1px solid black;
+	color: black;
+	font-weight: bolder;
+	display: inline-block;
+}
+#lettercontrols {
+	display: inline-block;
+}
+#locateablecontrols {
+	display: inline-block;
+}
+#buttonblocks {
+	display: inline-block;
+}
+#firstmap {
+	cursor: pointer;
+	border: 1px solid gray;
+	display: inline-block;
+}
+#prevmap {
+	cursor: pointer;
+	border: 1px solid gray;
+	display: inline-block;
+}
+#nextmap {
+	cursor: pointer;
+	border: 1px solid gray;
+	display: inline-block;
+}
+#lastmap {
+	cursor: pointer;
+	border: 1px solid gray;
 	display: inline-block;
 }

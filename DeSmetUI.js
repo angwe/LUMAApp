@@ -1,9 +1,9 @@
-$(document).ready( function () {
-		
-	$("#layers").append("<p>Text added</p>");
-	
+$(document).ready( function () {	
 	
 	var StLouis = new google.maps.LatLng(38.78587,-90.326206);
+	
+	$('#locatablecontrols').children().hide();
+	$('#locatablecontrols').hide();
 	
 	var infoWindow = function (marker) {
 		$('#map-canvas').gmap('openInfoWindow', {'content': "Sent to " + marker.letter.recipient + " on " + marker.letter.date + "."}, marker);
@@ -85,10 +85,8 @@ $(document).ready( function () {
 		
    $("#map-canvas").gmap(mapOptions);
 	var myMap = $("#map-canvas").gmap('get','map');
-
-	$("#layers").append("<p>Layers on/off will be here</p>");
 	
-		var fullQuery = encodeURI("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT * FROM 1eja-Sf9fKtfUyWs7gbPVeXC8O45JbIVjWiEtZDE WHERE Location > '' ORDER BY Date&key=AIzaSyCCiTJbrAoe15VipHG5QA2YkMjL3FTgq5Q&typed=true&callback=?");
+	var fullQuery = encodeURI("https://www.googleapis.com/fusiontables/v1/query?sql=SELECT * FROM 1eja-Sf9fKtfUyWs7gbPVeXC8O45JbIVjWiEtZDE WHERE Location > '' ORDER BY Date&key=AIzaSyAhabigJNcq-bDI6nuSUk_tbTl5DgkFpA0&typed=true&callback=?");
 
 	var letterObjects = {};
 	var markerObjects = {};
@@ -137,7 +135,7 @@ $(document).ready( function () {
 		
 	$("#AddMarkers").click(function () {
 		
-		$('#controls').append("<p>Click an icon to see the info. Double-click to see the delivery path. (Animation shows when click Add Path.)</p>");
+		$('#controls').append('<p id="letterinfo">Click an icon to see the info. Double-click to see the delivery path again.</p>');
 		animateLetters();
 		
 	});
@@ -145,8 +143,35 @@ $(document).ready( function () {
 	$("#ClearAnimations").click(function () {
 			
 			$('#map-canvas').gmap('find', 'markers', { 'property': 'markerType', 'value': 'animation' }, function(marker, found) {
-					marker.setVisible(found);
+					if(found) {
+						marker.setVisible(false);
+					}
 			});
+			$('#letterinfo').remove();
+	});
+	
+	$("#ClearLetters").click(function () {
+			
+			$('#map-canvas').gmap('find', 'markers', { 'property': 'markerType', 'value': 'letter' }, function(marker, found) {
+					if(found) {
+						marker.setVisible(false);
+					}
+			});
+			$('#letterinfo').remove();
+	});
+	
+	$('#letters').click(function () {
+			$('#locatablecontrols').children().hide();
+			$('#locatablecontrols').hide();
+			$('#lettercontrols').show();
+			$('#lettercontrols').children().show();
+	});
+	
+	$('#locatable').click(function () {
+			$('#lettercontrols').children().hide();
+			$('#lettercontrols').hide();
+			$('#locatablecontrols').show();
+			$('#locatablecontrols').children().show();
 	});
 		
 });
